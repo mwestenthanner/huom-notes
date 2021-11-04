@@ -1,0 +1,254 @@
+/* --- FONT IMPORTS --- */
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Righteous&display=swap');
+
+/* --- CSS RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* --- GLOBAL COLORS --- */
+:root {
+    --light-main: white;
+    --dark-main: #262626;
+    --turquoise: #06B2BC;
+    --yellow: #FED219;
+    --orange: #F68827;
+    --red: #FA5456;
+    --green: #93DE79;
+    --dark-turquoise: #10888F;
+    --dark-yellow: #BD9E1D;
+    --dark-orange: #B86B27;
+    --dark-red: #BA4648;
+    --dark-green: #73A760;
+}
+
+/* --- GLOBAL TEXT STYLING --- */
+h1 {
+    font-family: Righteous;
+    font-size: 6rem;
+}
+
+h2, h3, h4 {
+    font-family: Karla;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1rem;
+}
+
+p, a, span {
+    font-family: Karla;
+    font-size: 0.75rem;
+}
+
+/* --- GLOBAL COLOR CLASSES --- */
+.turquoise {
+    color: var(--turquoise);
+}
+
+.green {
+    color: var(--green);
+}
+
+.yellow {
+    color: var(--yellow);
+}
+
+.orange {
+    color: var(--orange);
+}
+
+.red {
+    color: var(--red);
+}
+
+.turquoise-bg {
+    background-color: var(--turquoise);
+}
+
+.green-bg {
+    background-color: var(--green);
+}
+
+.yellow-bg {
+    background-color: var(--yellow);
+}
+
+.orange-bg {
+    background-color: var(--orange);
+}
+
+.red-bg {
+    background-color: var(--red);  
+}
+
+/* --- MAIN CONTAINERS --- */
+main {
+    margin: 4rem;
+    margin-bottom: -10rem;
+}
+
+header {
+    margin: 8rem 4rem 4rem 4rem;
+}
+
+.pinned {
+    margin-bottom: 4rem;
+}
+
+.notes {
+    margin-bottom: 23rem;
+}
+
+/* --- FOLDERS AND NOTE GRID --- */
+.notes, .folders, .pinned {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3rem;
+    row-gap: 3rem;
+}
+
+.left-column, .right-column {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 3rem;
+    row-gap: 3rem;
+}
+
+.folders{
+    margin-bottom: 3rem;
+}
+
+/* --- NOTE STYLING --- */
+.note {
+    padding: 2rem;
+    border-radius: 1.5rem;
+}
+
+/* --- FOLDER STYLING --- */
+.folder {
+    border-radius: 1.5rem;
+    padding: 2rem;
+    border: 0.3rem solid var(--turquoise);
+}
+
+.folder h3 {
+    margin: 0;
+    display: inline-block;
+    font-size: 2.5rem;
+}
+
+.folder svg {
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+    margin-right: 0.5rem;
+    stroke: var(--turquoise);
+}
+
+/* --- MENU --- */
+nav {
+    position: fixed;
+    bottom: 0;
+    background-color: var(--light-main);
+    height: 10rem;
+    width: 100%;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4)  ; 
+	-webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.4); 
+	-moz-box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+    border-top-left-radius: 2.5rem; -webkit-border-top-left-radius: 2.5rem; -moz-border-top-left-radius: 2.5rem; 
+	border-top-right-radius: 2.5rem; -webkit-border-top-right-radius: 2.5rem; -moz-border-top-right-radius: 2.5rem;  
+}
+
+nav ul  {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem 0 3rem;
+    list-style-type: none;
+}
+
+nav svg {
+    width: 3rem;
+    height: auto;
+}
+
+/* --- DARK MODE --- */
+@media (prefers-color-scheme: light) {
+
+    /* --- BACKGROUND --- */
+    body, nav {
+        background-color: var(--dark-main);
+    }
+
+    /* --- GLOBAL COLOR CLASSES --- */
+    .turquoise {
+        color: var(--dark-turquoise);
+    }
+    
+    .green {
+        color: var(--dark-green);
+    }
+    
+    .yellow {
+        color: var(--dark-yellow);
+    }
+    
+    .orange {
+        color: var(--dark-orange);
+    }
+    
+    .red {
+        color: var(--dark-red);
+    }
+    
+    .turquoise-bg {
+        background-color: var(--dark-turquoise);
+    }
+    
+    .green-bg {
+        background-color: var(--dark-green);
+    }
+    
+    .yellow-bg {
+        background-color: var(--dark-yellow);
+    }
+    
+    .orange-bg {
+        background-color: var(--dark-orange);
+    }
+    
+    .red-bg {
+        background-color: var(--dark-red);  
+    }
+
+    /* --- TEXT --- */
+    h1, h2, h3, h4, p, a, span {
+        color: var(--light-main);
+    }
+
+    /* --- DETAILS --- */
+    .menu-svg {
+        fill: var(--light-main);
+    }
+
+    .add-svg  {
+        fill: var(--dark-yellow);
+    }
+
+    .search-svg {
+        stroke: var(--light-main);
+    }
+
+}
